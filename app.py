@@ -1,25 +1,28 @@
-from flask import Flask, jsonify, render_template, send_from_directory
+from flask import Flask, jsonify, render_template, send_from_directory, request
 import os
 import json
+from database import get_all_designers, update_designer_shortlist
 
 app = Flask(__name__, 
             static_folder='static',
             template_folder='templates')
 
-# Load designers data from JSON file
-def load_designers_data():
-    try:
-        with open(os.path.join(app.static_folder, 'js/designers.json'), 'r') as file:
-            return json.load(file)
-    except Exception as e:
-        print(f"Error loading designers data: {e}")
-        return []
 
 # API endpoint to get all designers
 @app.route('/api/designers', methods=['GET'])
 def get_designers():
-    designers = load_designers_data()
+    designers = get_all_designers()
     return jsonify(designers)
+
+# API endpoint to update designer shortlist status
+@app.route('/api/designers/<int:designer_id>/shortlist', methods=['PUT'])
+def update_shortlist(designer_id):
+    data = request.get_json()
+    if data and 'shortlisted' in data:
+        success = update_designer_shortlist(designer_id, data['shortlisted'])
+        if success:
+            return jsonify({"success": True})
+    return jsonify({"success": False}), 400
 
 # Route for the main page
 @app.route('/')

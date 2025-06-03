@@ -11,21 +11,14 @@ const designerTemplate = document.getElementById('designer-template');
 // Fetch designers data
 async function fetchDesigners() {
     try {
-        // First try to fetch from API
+        // Fetch from API
         const response = await fetch('/api/designers');
         designers = await response.json();
+        renderDesigners();
     } catch (error) {
-        console.log('Falling back to local JSON file');
-        // Fallback to local JSON file
-        try {
-            const response = await fetch('../static/js/designers.json');
-            designers = await response.json();
-        } catch (fallbackError) {
-            console.error('Error fetching designers data:', fallbackError);
-            designers = [];
-        }
+        console.error('Error fetching designers data:', error);
+        designers = [];
     }
-    renderDesigners();
 }
 
 // Render designers based on current filter
@@ -117,19 +110,35 @@ function createDesignerCard(designer) {
 }
 
 // Toggle shortlist status for a designer
-function toggleShortlist(designerId) {
+async function toggleShortlist(designerId) {
     // Find the designer
     const designerIndex = designers.findIndex(d => d.id === designerId);
     if (designerIndex === -1) return;
     
     // Toggle shortlisted status
-    designers[designerIndex].shortlisted = !designers[designerIndex].shortlisted;
+    const newShortlistedStatus = !designers[designerIndex].shortlisted;
     
-    // Update UI
-    renderDesigners();
-    
-    // Save updated data (in a real app, this would send to the server)
-    saveDesignersData();
+    try {
+        // Update in database via API
+        const response = await fetch(`/api/designers/${designerId}/shortlist`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ shortlisted: newShortlistedStatus }),
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Update local state
+            designers[designerIndex].shortlisted = newShortlistedStatus;
+            // Update UI
+            renderDesigners();
+        }
+    } catch (error) {
+        console.error('Error updating shortlist status:', error);
+    }
 }
 
 // Toggle shortlisted filter
@@ -146,13 +155,6 @@ function toggleShortlistedFilter() {
     }
     
     renderDesigners();
-}
-
-// Save designers data (mock implementation)
-function saveDesignersData() {
-    // In a real app, this would send data to the server
-    console.log('Saving designers data:', designers);
-    // For now, we just keep it in memory
 }
 
 // Initialize the app
