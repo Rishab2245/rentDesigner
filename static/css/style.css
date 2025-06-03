@@ -1,0 +1,220 @@
+/* Base styles and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 150px;
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #666;
+    
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Navigation tabs */
+.nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tab-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+}
+
+.tab span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #c4a265;
+}
+
+/* Designer listings */
+.listings-container {
+    padding: 0;
+}
+
+.designer-card {
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    display: flex;
+}
+.designer-card:nth-child(2n-1) {
+        background-color: #fffdf5;
+
+}
+
+.designer-info {
+    padding: 16px;
+    /* background-color: #fffdf5; */
+}
+
+.designer-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.rating {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.star {
+    color: #f0a868;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.designer-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.designer-stats {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.stat {
+    flex: 1;
+    text-align: left;
+}
+
+.stat h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.stat p {
+    font-size: 12px;
+    color: #999;
+}
+
+.contact-info {
+    margin-bottom: 8px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+/* Designer actions */
+.designer-actions {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    /* background-color: #fffdf5; */
+    height: 20rem;
+    gap: 25px;
+    border-left: 1px solid #eee;
+}
+
+.action-button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.action-icon, .shortlist-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+}
+
+.action-button span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Details button */
+.details-button span {
+    color: #c4a265;
+}
+
+/* Shortlist button */
+.shortlist-button.active span {
+    color: #c4a265;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/* Shortlisted filter active state */
+#shortlisted-tab.active-filter span {
+    color: #c4a265;
+    font-weight: 600;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmptyCup - Interior Designers</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo and menu -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="../static/images/logo.png" alt="EmptyCup Logo" class="logo">
+                <h1>EmptyCup</h1>
+            </div>
+            <button class="menu-button">
+                <img src="../static/icons/menu.svg" alt="Menu" class="menu-icon">
+            </button>
+        </header>
+
+        <!-- Navigation tabs -->
+        <nav class="nav-tabs">
+            <div class="tab">
+                <img src="../static/icons/contacts.svg" alt="Contacts" class="tab-icon">
+                <span>Contacts</span>
+            </div>
+            <div class="tab">
+                <img src="../static/icons/gallery.svg" alt="Gallery" class="tab-icon">
+                <span>Gallery</span>
+            </div>
+            <div class="tab">
+                <img src="../static/icons/map.svg" alt="Map" class="tab-icon">
+                <span>Map</span>
+            </div>
+            <div class="tab active" id="shortlisted-tab">
+                <img src="../static/icons/shortlisted.svg" alt="Shortlisted" class="tab-icon" id="shortlisted-icon">
+                <span>Shortlisted</span>
+            </div>
+            <div class="tab">
+                <img src="../static/icons/sort.svg" alt="Sort" class="tab-icon">
+                <span>Sort</span>
+            </div>
+        </nav>
+
+        <!-- Designer listings container -->
+        <main class="listings-container" id="listings-container">
+            <!-- Designer listings will be dynamically inserted here -->
+        </main>
+    </div>
+
+    <!-- Designer listing template -->
+    <template id="designer-template">
+        <div class="designer-card">
+            <div class="designer-info">
+                <h2 class="designer-name"></h2>
+                <div class="rating"></div>
+                <p class="designer-description"></p>
+                
+                <div class="designer-stats">
+                    <div class="stat">
+                        <h3 class="projects-count"></h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="years-count"></h3>
+                        <p>Years</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="price-level"></h3>
+                        <p>Price</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <p class="phone-1"></p>
+                    <p class="phone-2"></p>
+                </div>
+            </div>
+            
+            <div class="designer-actions">
+                <button class="action-button details-button">
+                    <img src="../static/icons/details.svg" alt="Details">
+                    <span>Details</span>
+                </button>
+                <button class="action-button hide-button">
+                    <img src="../static/icons/hide.svg" alt="Hide">
+                    <span>Hide</span>
+                </button>
+                <button class="action-button shortlist-button">
+                    <img src="../static/icons/shortlist.svg" alt="Shortlist" class="shortlist-icon">
+                    <span>Shortlist</span>
+                </button>
+                <button class="action-button report-button">
+                    <img src="../static/icons/report.svg" alt="Report">
+                    <span>Report</span>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

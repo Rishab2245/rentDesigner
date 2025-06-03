@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Epic Designs",
+    "rating": 3.5,
+    "description": "Passionate team of 4 designers working out of Bangalore with an experience of 4 years.",
+    "projects": 57,
+    "years": 8,
+    "price_level": "$$",
+    "contact": ["+91 - 984532853", "+91 - 984532854"],
+    "shortlisted": false
+  },
+  {
+    "id": 2,
+    "name": "Studio - D3",
+    "rating": 4.5,
+    "description": "Passionate team of 4 designers working out of Bangalore with an experience of 5 years.",
+    "projects": 43,
+    "years": 6,
+    "price_level": "$$$",
+    "contact": ["+91 - 984532853", "+91 - 984532854"],
+    "shortlisted": false
+  },
+  {
+    "id": 3,
+    "name": "Artisan Interiors",
+    "rating": 5,
+    "description": "Award-winning design studio specializing in luxury residential projects across Mumbai.",
+    "projects": 72,
+    "years": 10,
+    "price_level": "$$$",
+    "contact": ["+91 - 987654321", "+91 - 987654322"],
+    "shortlisted": false
+  },
+  {
+    "id": 4,
+    "name": "Urban Spaces",
+    "rating": 4,
+    "description": "Contemporary design team focusing on functional and sustainable interior solutions.",
+    "projects": 38,
+    "years": 5,
+    "price_level": "$$",
+    "contact": ["+91 - 912345678", "+91 - 912345679"],
+    "shortlisted": false
+  },
+  {
+    "id": 5,
+    "name": "Harmony Designs",
+    "rating": 4.5,
+    "description": "Boutique design firm creating personalized spaces that reflect client personalities.",
+    "projects": 45,
+    "years": 7,
+    "price_level": "$$",
+    "contact": ["+91 - 923456789", "+91 - 923456780"],
+    "shortlisted": false
+  },
+  {
+    "id": 6,
+    "name": "Elegance Studio",
+    "rating": 5,
+    "description": "Luxury interior design specialists with expertise in high-end residential and commercial projects.",
+    "projects": 63,
+    "years": 9,
+    "price_level": "$$$",
+    "contact": ["+91 - 934567890", "+91 - 934567891"],
+    "shortlisted": false
+  },
+  {
+    "id": 7,
+    "name": "Modern Edge",
+    "rating": 3.5,
+    "description": "Innovative team creating cutting-edge contemporary designs for urban spaces.",
+    "projects": 29,
+    "years": 4,
+    "price_level": "$$",
+    "contact": ["+91 - 945678901", "+91 - 945678902"],
+    "shortlisted": false
+  },
+  {
+    "id": 8,
+    "name": "Heritage Interiors",
+    "rating": 4,
+    "description": "Specialists in blending traditional elements with modern functionality.",
+    "projects": 51,
+    "years": 8,
+    "price_level": "$$$",
+    "contact": ["+91 - 956789012", "+91 - 956789013"],
+    "shortlisted": false
+  }
+]
