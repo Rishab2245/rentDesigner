@@ -37,7 +37,7 @@ body {
 .logo {
     width: 32px;
     height: 32px;
-    margin-right: 12px;
+    margin-right: 150px;
 }
 
 .header h1 {
@@ -94,11 +94,15 @@ body {
 .designer-card {
     border-bottom: 1px solid #eee;
     overflow: hidden;
+    display: flex;
+
+}
+.designer-card:nth-child(2n-1) {
+   background-color: #fffdf5;
 }
 
 .designer-info {
-    padding: 16px;
-    background-color: #fffdf5;
+    padding: 16px;  
 }
 
 .designer-name {
@@ -161,8 +165,11 @@ body {
 /* Designer actions */
 .designer-actions {
     display: flex;
-    background-color: #fff;
-    height: 60px;
+    padding: 16px;
+    height: 110%;
+    flex-direction: column;
+    gap: 25px;
+    border-left:1px solid #eee;
 }
 
 .action-button {
