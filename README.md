@@ -41,7 +41,7 @@ emptycup_assignment/
 ├── app.py
 ├── database.py
 ├── requirements.txt
-├── .env.example
+├── .env
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
